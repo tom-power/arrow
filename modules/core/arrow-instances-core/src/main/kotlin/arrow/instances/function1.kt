@@ -4,6 +4,7 @@ import arrow.Kind
 import arrow.core.*
 import arrow.instance
 import arrow.typeclasses.Applicative
+import arrow.typeclasses.Contravariant
 import arrow.typeclasses.Functor
 import arrow.typeclasses.Monad
 import arrow.typeclasses.Profunctor
@@ -12,6 +13,12 @@ import arrow.typeclasses.Profunctor
 interface Function1FunctorInstance<I> : Functor<Function1PartialOf<I>> {
   override fun <A, B> Kind<Function1PartialOf<I>, A>.map(f: (A) -> B): Function1<I, B> =
     fix().map(f)
+}
+
+@instance(Function1::class)
+interface Function1ContravariantInstance<I> : Contravariant<Function1PartialOf<I>> {
+  override fun <A, B> Kind<Function1PartialOf<I>, A>.contramap(f: (B) -> A): Function1<I, B> =
+    fix().contramap(f)
 }
 
 @instance(Function1::class)
