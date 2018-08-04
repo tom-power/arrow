@@ -7,10 +7,7 @@ import arrow.test.UnitSpec
 import arrow.test.laws.ContravariantLaws
 import arrow.test.laws.MonadLaws
 import arrow.test.laws.ProfunctorLaws
-import arrow.typeclasses.Conested
-import arrow.typeclasses.Eq
-import arrow.typeclasses.conest
-import arrow.typeclasses.counnest
+import arrow.typeclasses.*
 import io.kotlintest.KTestJUnitRunner
 import org.junit.runner.RunWith
 
